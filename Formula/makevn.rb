@@ -33,8 +33,6 @@ class Makevn < Formula
       "libexec/makevn/compat",
     ]
 
-    bin.install "mcp/dist/makevn-mcp.js" => "makevn-mcp"
-
     (share/"makevn").install Dir["share/makevn/*"]
     (share/"makevn/skills/makevn").install Dir["skills/makevn/*"]
   end
@@ -45,18 +43,13 @@ class Makevn < Formula
 
         makevn --help
 
-      Run makevn from a Java Maven repository:
-
-        makevn doctor
-        makevn init
-        makevn test --name UserRepositoryTest
-
       For MCP (Model Context Protocol) support, add to your client config:
 
       {
         "mcpServers": {
           "makevn": {
-            "command": "#{HOMEBREW_PREFIX}/bin/makevn-mcp"
+            "command": "#{HOMEBREW_PREFIX}/bin/makevn",
+            "args": ["--mcp"]
           }
         }
       }
