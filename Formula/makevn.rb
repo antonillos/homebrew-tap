@@ -11,7 +11,6 @@ class Makevn < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "node" => :build
 
   def install
     if build.head?
@@ -34,11 +33,7 @@ class Makevn < Formula
       "libexec/makevn/compat",
     ]
 
-    cd "mcp" do
-      system "npm", "ci"
-      system "npm", "run", "bundle"
-      bin.install "dist/makevn-mcp.js" => "makevn-mcp"
-    end
+    bin.install "mcp/dist/makevn-mcp.js" => "makevn-mcp"
 
     (share/"makevn").install Dir["share/makevn/*"]
     (share/"makevn/skills/makevn").install Dir["skills/makevn/*"]
