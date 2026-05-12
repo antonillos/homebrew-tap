@@ -11,6 +11,7 @@ class Makevn < Formula
   end
 
   depends_on "rust" => :build
+  depends_on "node" => :build
 
   def install
     if build.head?
@@ -33,6 +34,12 @@ class Makevn < Formula
       "libexec/makevn/compat",
     ]
 
+    cd "mcp" do
+      system "npm", "ci"
+      system "npm", "run", "bundle"
+      bin.install "dist/makevn-mcp.js" => "makevn-mcp"
+    end
+
     (share/"makevn").install Dir["share/makevn/*"]
     (share/"makevn/skills/makevn").install Dir["skills/makevn/*"]
   end
@@ -49,20 +56,15 @@ class Makevn < Formula
         makevn init
         makevn test --name UserRepositoryTest
 
-      For MCP (Model Context Protocol) support:
+      For MCP (Model Context Protocol) support, add to your client config:
 
-        npx -y @antonillos/makevn-mcp
-
-      Or add to your Claude Desktop config:
-
+      {
         "mcpServers": {
           "makevn": {
-            "command": "npx",
-            "args": ["-y", "@antonillos/makevn-mcp"]
+            "command": "#{HOMEBREW_PREFIX}/bin/makevn-mcp"
           }
         }
-
-      See https://github.com/antonillos/makevn for more.
+      }
     EOS
   end
 
