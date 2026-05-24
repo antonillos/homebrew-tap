@@ -7,7 +7,7 @@ class Makevn < Formula
 
   stable do
     url "https://github.com/antonillos/makevn/releases/download/v0.1.0/makevn-v0.1.0.tar.gz"
-    sha256 "TBD_AFTER_RELEASE"
+    sha256 "0cf1b0e7e5d60220bc58b1092d8d0f75442508a6303901d6b220245c583ca3e9"
   end
 
   depends_on "rust" => :build
