@@ -4,11 +4,11 @@ class Safeselect < Formula
   license "MIT OR Apache-2.0"
 
   if Hardware::CPU.arm?
-    url "https://github.com/antonillos/safeselect/releases/download/v0.1.0/safeselect-aarch64-apple-darwin.tar.gz"
-    sha256 "PLACEHOLDER_ARM64"
+    url "https://github.com/antonillos/safeselect/releases/download/v0.1.1/safeselect-v0.1.1-aarch64-apple-darwin.tar.gz"
+    sha256 "78f3125213a9106d765403513516473fcc6cc9ee4100f4d32a4bc5eb65bcb82f"
   else
-    url "https://github.com/antonillos/safeselect/releases/download/v0.1.0/safeselect-x86_64-apple-darwin.tar.gz"
-    sha256 "PLACEHOLDER_X86_64"
+    url "https://github.com/antonillos/safeselect/releases/download/v0.1.1/safeselect-v0.1.1-x86_64-apple-darwin.tar.gz"
+    sha256 "97270e7fdd819232bd45169f55e9385f0fc80da107b466b137d1783ceacd4dd9"
   end
 
   depends_on "openjdk@17"
@@ -27,17 +27,15 @@ class Safeselect < Formula
 
         safeselect driver download --vendor postgresql
 
-      Or register a custom driver:
-
-        safeselect driver add --vendor <name> --path /path/to/jdbc.jar --class <driver-class>
-
       For MCP (Model Context Protocol) support, install the integration:
 
-        safeselect agent install opencode --project <project> --environment <env> --name <name>
+        safeselect agent install opencode --environment <env> --name <name>
+
+      (Run from your project repo — .safeselect/ is auto-detected.)
     EOS
   end
 
   test do
-    assert_match "safeselect #{version}", shell_output("#{bin}/safeselect --version")
+    assert_match "safeselect #{version}", shell_output("\#{bin}/safeselect --version")
   end
 end
