@@ -4,11 +4,11 @@ class Safeselect < Formula
   license "MIT OR Apache-2.0"
 
   if Hardware::CPU.arm?
-    url "https://github.com/antonillos/safeselect/releases/download/v0.4.0/safeselect-v0.4.0-aarch64-apple-darwin.tar.gz"
-    sha256 "a42669f7a4a54e23721505b3b6f61c8f0d3ff79800755e44ad513014201bf9c3"
+    url "https://github.com/antonillos/safeselect/releases/download/v0.5.1/safeselect-v0.5.1-aarch64-apple-darwin.tar.gz"
+    sha256 "f3e1114ed5ce271a6a1985ea70192516be736527d1ad3245a81cd1ce388c3b8c"
   else
-    url "https://github.com/antonillos/safeselect/releases/download/v0.4.0/safeselect-v0.4.0-x86_64-apple-darwin.tar.gz"
-    sha256 "812ebd0c53b237e333a7f987459bc9993ccef2adbf8adcd1491ec189c7e018ad"
+    url "https://github.com/antonillos/safeselect/releases/download/v0.5.1/safeselect-v0.5.1-x86_64-apple-darwin.tar.gz"
+    sha256 "6a255187ae4bc20d4eaa6b06d330a6372220fd735dc73ade7ae582eee7b72377"
   end
 
   depends_on "openjdk@17"
