@@ -4,14 +4,12 @@ class Safeselect < Formula
   license "MIT OR Apache-2.0"
 
   if Hardware::CPU.arm?
-    url "https://github.com/antonillos/safeselect/releases/download/v0.6.0/safeselect-v0.6.0-aarch64-apple-darwin.tar.gz"
-    sha256 "fed872d1c5c7966f3a0b3b6f62675243d0ea5d35cea135ca5b497d41bf616b49"
+    url "https://github.com/antonillos/safeselect/releases/download/v0.6.1/safeselect-v0.6.1-aarch64-apple-darwin.tar.gz"
+    sha256 "2980d74355cc410b55c3dd955258c57a4ea5935ff08186ae315e07d366007a3f"
   else
-    url "https://github.com/antonillos/safeselect/releases/download/v0.6.0/safeselect-v0.6.0-x86_64-apple-darwin.tar.gz"
-    sha256 "0b88d4cd812785003f0dbf36c38229be727934edd456c2eea2ec650b73a3c771"
+    url "https://github.com/antonillos/safeselect/releases/download/v0.6.1/safeselect-v0.6.1-x86_64-apple-darwin.tar.gz"
+    sha256 "e757b3ceb436247adaac2275efce34dba8988dfebc0f5b4787ee08c01968943a"
   end
-
-  depends_on "openjdk@17"
 
   def install
     bin.install "safeselect"
@@ -23,7 +21,11 @@ class Safeselect < Formula
 
         safeselect --help
 
-      A JDBC driver is required. Download the PostgreSQL driver:
+      SafeSelect requires Java 17 or newer at runtime. If needed, install it with:
+
+        brew install openjdk@17
+
+      PostgreSQL requires a JDBC driver. Download it with:
 
         safeselect driver download --vendor postgresql
 
