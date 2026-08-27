@@ -4,11 +4,11 @@ class Safeselect < Formula
   license "MIT OR Apache-2.0"
 
   if Hardware::CPU.arm?
-    url "https://github.com/antonillos/safeselect/releases/download/v0.7.4/safeselect-v0.7.4-aarch64-apple-darwin.tar.gz"
-    sha256 "778a1862b5c3685a35036356e21b0083493cd5c52ca5c22ad0f403b699ee0df4"
+    url "https://github.com/antonillos/safeselect/releases/download/v0.7.5/safeselect-v0.7.5-aarch64-apple-darwin.tar.gz"
+    sha256 "3ed46b32fbe9093c52d1c6ba52f653abc826b56db37d8ab10c50b1af51209f8b"
   else
-    url "https://github.com/antonillos/safeselect/releases/download/v0.7.4/safeselect-v0.7.4-x86_64-apple-darwin.tar.gz"
-    sha256 "33fda5119a38ba13be56cb86442a58af92a1fca9afb28b68c8b161dc14945fb9"
+    url "https://github.com/antonillos/safeselect/releases/download/v0.7.5/safeselect-v0.7.5-x86_64-apple-darwin.tar.gz"
+    sha256 "2ad24c1a1545ce0d394f7d01a592254f23ce727f600553341f96e10ae8517dd1"
   end
 
   def install
