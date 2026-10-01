@@ -4,11 +4,11 @@ class Makevn < Formula
   license "MIT"
 
   if Hardware::CPU.arm?
-    url "https://github.com/antonillos/makevn/releases/download/v0.1.12/makevn-v0.1.12-aarch64-apple-darwin.tar.gz"
-    sha256 "cafa442c5f5d934f98981bbf7bfe9abe685586c855d6807bee54eb038b584eef"
+    url "https://github.com/antonillos/makevn/releases/download/v0.1.13/makevn-v0.1.13-aarch64-apple-darwin.tar.gz"
+    sha256 "0b94e978a354ea429b81e99b6a2d31f02677e3e7305869a4e378d3648b51f2fc"
   else
-    url "https://github.com/antonillos/makevn/releases/download/v0.1.12/makevn-v0.1.12-x86_64-apple-darwin.tar.gz"
-    sha256 "36a76ac3b9a160e8f058147590b51651025700dc1fc633abd88130a3b858f89a"
+    url "https://github.com/antonillos/makevn/releases/download/v0.1.13/makevn-v0.1.13-x86_64-apple-darwin.tar.gz"
+    sha256 "c1e75d62ea95fc3378fb708d4144b5abd8c6418d508bb37a179c396e13438d08"
   end
 
   def install
